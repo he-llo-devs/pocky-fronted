@@ -1,0 +1,351 @@
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	h1, h2, h3, h4, h5 {
+		font-family: 'Montserrat'
+	}
+
+	.list-middot > li:not(:last-child)::after {
+		content: "•";
+		margin: 0 15px;
+	}
+
+	.list-comma > li:not(:last-child)::after {
+		content: ",";
+	}
+
+	input[type='number']::-webkit-outer-spin-button,
+	input[type='number']::-webkit-inner-spin-button,
+	input[type='number'] {
+	  -webkit-appearance: none;
+	  -moz-appearance: textfield !important;
+	  margin: 0;
+	}
+}
+
+@layer utilities {
+	/* width */
+	::-webkit-scrollbar {
+		width: 10px;
+		height: 10px;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background: #6B7280aa;
+		border-radius: 100vh;
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		background: #6B7280;
+	}
+}
+
+@layer components{
+    .button {
+        @apply rounded-xl w-32 h-9 ml-3 justify-center items-center
+    }
+
+	.header1 {
+		@apply font-extrabold text-4xl
+	}
+
+	.header2 {
+		@apply font-extrabold text-3xl
+	}
+
+	.header3 {
+		@apply font-extrabold text-2xl
+	}
+
+	.header4 {
+		@apply font-extrabold text-xl
+	}
+
+	.header5 {
+		@apply font-extrabold text-lg
+	}
+	
+	.header6 {
+		@apply font-bold text-lg
+	}
+
+	/*------------ Containers --------------------*/
+	.mainContainer {
+		@apply pt-4 pb-12 md:pb-4 md:px-10 grid gap-6 md:grid-cols-8 lg:grid-cols-12
+	}
+
+	/*------------ ANIMATION ------------------- */
+	.link-animated {
+		@apply inline-block relative
+	}
+
+	.link-animated::after {
+		@apply bg-primary-500 absolute w-full h-0.5 bottom-0 left-0;
+		transform: scaleX(0);
+		content: '';
+		transform-origin: bottom right;
+		transition: transform 0.25s ease-out;
+	}
+
+	.link-animated:hover::after {
+		transform: scaleX(1);
+  		transform-origin: bottom left;
+	}
+
+	/*--------- FLOATING INPUT STYLES ----------*/
+	.floatingInput-wrapper {
+		@apply flex items-center justify-between px-5 py-2 rounded-xl border-2 bg-gray-200 dark:bg-gray-800 border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-400
+	}
+
+	.floatingInput-wrapper-error {
+		@apply flex items-center justify-between px-5 py-2 rounded-xl border-2 bg-gray-200 dark:bg-gray-800 border-red-400 dark:border-red-400 hover:border-gray-400 dark:hover:border-gray-400
+	}
+
+	.floatingInput-label {
+		@apply text-gray-500 dark:text-gray-400
+	}
+
+	.floatingInput-input {
+		@apply bg-transparent font-bold focus:outline-none dark:placeholder:text-gray-600
+	}
+
+	/*--------- BUTTON STYLES ----------*/
+	.button-primary {
+		@apply px-8 py-2 bg-primary-600 rounded-full text-lightBackground
+	}
+	
+	/*----------- INPUT STYLES ----------*/
+	.input1 {
+		@apply block w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:border-primary-400 focus:ring-primary-300 focus:ring-opacity-40 dark:focus:border-primary-300 focus:outline-none focus:ring
+	}
+	
+	.input1-error {
+		@apply block w-full px-4 py-2 border border-red-400 rounded-lg dark:bg-gray-800 dark:border-red-400 focus:border-red-400 focus:ring-red-300 focus:ring-opacity-40 dark:focus:border-red-300 focus:outline-none focus:ring
+	}
+
+	.input3 {
+		@apply block w-full px-4 py-2 border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:border-primary-400 focus:ring-primary-300 focus:ring-opacity-40 dark:focus:border-primary-300 focus:outline-none focus:ring
+	}
+
+	/*-------------- TABLE STYLES --------------------*/
+	.custom-table {
+		@apply table w-full border-collapse
+	}
+
+	.custom-table-header-group {
+		@apply table-header-group border-b-2 dark:border-gray-700
+	}
+
+	.custom-table-header {
+		@apply table-cell px-5 py-2 font-normal text-left align-middle
+	}
+
+	.custom-table-row {
+		@apply table-row border-t border-gray-50 dark:border-gray-700 text-left
+	}
+
+	.custom-table-cell {
+		@apply table-cell px-5 font-light py-2 align-middle
+	}
+	
+	/* ------------ SHOPPING CART STYLES ------------- */
+	.cart-wrapper {
+		@apply border-t dark:border-gray-600 py-8 grid gap-5 grid-cols-3
+	}
+
+	.cart-text {
+		@apply p-2 xl:p-0 rounded-xl bg-gray-100 dark:bg-gray-700 xl:dark:bg-transparent
+	}
+
+	.cart-actions {
+		@apply self-end justify-self-end col-span-2 space-x-2
+	}
+
+	.purchase-cart-actions {
+		@apply self-end justify-self-end col-span-full space-x-2
+	}
+
+	/* ------------ WIDTH STYLES --------------*/
+	.w-384 {
+		width: 1536px !important;
+	}
+
+	.max-w-384 {
+		max-width: 1536px !important;
+	}
+
+	/*------------- SKELETON STYLES ---------------*/
+	.skeleton {
+		@apply w-full h-8 rounded-md animate-pulse bg-gray-100 dark:bg-gray-700
+	}
+
+	/*-------------- MISCELANEOUS ---------------*/
+	.mandadoryInputs-text {
+		@apply mt-8 text-sm font-light
+	}
+
+}
+
+/*----------- OTHER STYLES --------*/
+.apexcharts-tooltip {
+	@apply !border !shadow-sm dark:!border-gray-700 dark:!shadow-none dark:!bg-gray-800
+}
+
+.apexcharts-xaxistooltip {
+	@apply !bg-white dark:!bg-gray-800 !border dark:!border-gray-700 dark:!text-white !rounded-md
+}
+
+.apexcharts-xaxistooltip::before {
+	@apply !border-b-gray-600 dark:!border-b-gray-700
+}
+
+.apexcharts-xaxistooltip::after {
+	@apply !border-b-white dark:!border-b-gray-800
+}
+
+.apexcharts-menu {
+	@apply !rounded-lg !p-1 dark:!bg-gray-800 !border dark:!border-gray-700
+}
+
+.apexcharts-menu-item {
+	@apply hover:!bg-primary-500/30 hover:!rounded-md
+}
+
+.apexcharts-menu-icon {
+	@apply !scale-100
+}
+
+.apexcharts-menu-icon svg {
+	@apply dark:!fill-gray-400
+}
+
+/*----------- DATE PICKER STYLES ----------------*/
+.react-datepicker {
+	@apply text-sm relative
+}
+
+.react-datepicker__navigation--previous {
+	@apply absolute
+}
+
+.react-datepicker__navigation-icon--previous {
+	@apply absolute left-0 top-0 invisible dark:invert
+}
+
+.react-datepicker__navigation-icon--previous::after {
+	visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z'/%3E%3C/svg%3E");
+	width: 8px;
+}
+
+.react-datepicker__navigation--next{
+	@apply absolute top-0 right-0 invisible dark:invert
+}
+
+.react-datepicker__navigation-icon--next::after {
+	visibility: visible;
+    position: absolute;
+    top: 0;
+    right: 0;
+	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z'/%3E%3C/svg%3E");
+	width: 8px;
+}
+
+.react-datepicker__year-dropdown-container {
+	@apply flex justify-center
+}
+
+.react-datepicker__year-dropdown--scrollable {
+	@apply absolute max-h-36 bg-white drop-shadow-md dark:bg-gray-800 z-10 py-2 overflow-y-auto border rounded-lg dark:border-gray-700
+}
+
+.react-datepicker__year-option--selected {
+	@apply hidden
+}
+
+.react-datepicker__year-option {
+	@apply hover:bg-primary-100 hover:dark:bg-primary-600/20 w-full px-4 cursor-pointer
+}
+
+.react-datepicker__year-read-view {
+	@apply mb-2 flex items-center cursor-pointer
+}
+
+.react-datepicker__year-read-view::after {
+	translate: 12px;
+	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z'/%3E%3C/svg%3E");
+	rotate: 90deg;
+	width: 8px;
+	height: 8px;
+
+	@apply dark:invert
+}
+
+.react-datepicker__header {
+	@apply text-center mb-2
+}
+
+.react-datepicker__month-text {
+	@apply cursor-pointer hover:bg-primary-50 dark:hover:bg-primary-500/20 rounded-md py-1 px-2
+}
+
+.react-datepicker__input-container input {
+	@apply block w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-600 focus:border-primary-400 focus:ring-primary-300 focus:ring-opacity-40 dark:focus:border-primary-300 focus:outline-none focus:ring
+}
+
+.react-datepicker-popper {
+	@apply z-10 mt-1 drop-shadow-md bg-white dark:bg-gray-800 border dark:border-gray-600 rounded-lg px-4 py-2
+}
+
+.react-datepicker__current-month {
+	@apply text-center font-bold
+}
+
+.react-datepicker__day-names {
+	@apply flex w-full justify-around pb-2 border-b dark:border-gray-600
+}
+
+.react-datepicker__month {
+	@apply w-full table
+}
+
+.react-datepicker__month-wrapper {
+	@apply table-row text-center
+}
+
+.react-datepicker__month-text {
+	@apply table-cell
+}
+
+.react-datepicker__week {
+	@apply w-full table-row text-center
+}
+
+.react-datepicker__day--outside-month {
+	@apply opacity-50 table-cell
+}
+
+.react-datepicker__day {
+	@apply cursor-pointer hover:bg-primary-50 dark:hover:bg-primary-500/20 py-1 px-2 rounded-md table-cell
+}
+
+.react-datepicker__day--today, .react-datepicker__month-text--today {
+	@apply border border-gray-300 dark:border-gray-600
+}
+
+.react-datepicker__day--selected, .react-datepicker__month--selected {
+	@apply bg-primary-600 font-bold text-white
+}
