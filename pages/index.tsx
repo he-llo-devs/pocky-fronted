@@ -1,3 +1,5 @@
+import { faReact } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Head from 'next/head';
 
 export default function Home() {
@@ -10,7 +12,10 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main>
-				<h1>Desde Home</h1>
+				<div>
+					<h1>Desde Home</h1>
+					<FontAwesomeIcon icon={faReact}/>
+				</div>
 			</main>
 		</>
 	);
