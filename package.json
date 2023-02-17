@@ -25,6 +25,7 @@
     "eslint-config-next": "13.1.6",
     "lucide-react": "^0.115.0",
     "next": "13.1.6",
+    "next-i18next": "^13.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "4.9.5"
