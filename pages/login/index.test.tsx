@@ -7,9 +7,9 @@ import { act } from 'react-dom/test-utils';
 import { RenderResult } from '@testing-library/react';
 import { I18n } from 'next-i18next';
 
-import Home from '.';
+import Login from '.';
 
-describe("Index page", (): void => {
+describe("Login page", (): void => {
 	let HomeComponent: RenderResult;
 	let i18n: I18n;
 
@@ -19,7 +19,7 @@ describe("Index page", (): void => {
 
 		HomeComponent = render(
 			<I18nextProvider i18n={i18n}>
-				<Home/>
+				<Login/>
 			</I18nextProvider>
 		);
 	});
@@ -31,17 +31,5 @@ describe("Index page", (): void => {
 	it("renders page", (): void => {
 		const h1 = HomeComponent.getByRole('heading');
 		expect(h1).toBeInTheDocument();
-	});
-
-	it("render properly in Spanish", (): void => {
-		expect(HomeComponent.getByText("Bienvenido a Pocky")).toBeInTheDocument();
-	});
-
-	it("render properly in English", (): void => {		
-		act(() => {
-			i18n.changeLanguage("en");
-		});
-
-		expect(HomeComponent.getByText("Welcome to Pocky")).toBeInTheDocument();
 	});
 });
