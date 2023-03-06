@@ -36,10 +36,6 @@ describe("Login page", (): void => {
 	it("GetServerSideProps should return the corresponding i18n locale", async (): Promise<void> => {
 		const context = { locale: 'es' };
 		const res = await getStaticProps(context) as { props: { [key: string]: any }};
-
-		expect(res).toHaveProperty('props');
-		expect(res.props).toHaveProperty('_nextI18Next');
-		expect(res.props._nextI18Next).toHaveProperty('initialLocale');
 		expect(res.props._nextI18Next.initialLocale).toBe("es");
 	});
 });
