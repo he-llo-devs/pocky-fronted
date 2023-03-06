@@ -7,7 +7,7 @@ import { act } from 'react-dom/test-utils';
 import { RenderResult } from '@testing-library/react';
 import { I18n } from 'next-i18next';
 
-import Login from '.';
+import Login, { getStaticProps } from '.';
 
 describe("Login page", (): void => {
 	let HomeComponent: RenderResult;
@@ -31,5 +31,15 @@ describe("Login page", (): void => {
 	it("renders page", (): void => {
 		const h1 = HomeComponent.getByRole('heading');
 		expect(h1).toBeInTheDocument();
+	});
+
+	it("GetServerSideProps should return the corresponding i18n locale", async (): Promise<void> => {
+		const context = { locale: 'es' };
+		const res = await getStaticProps(context) as { props: { [key: string]: any }};
+
+		expect(res).toHaveProperty('props');
+		expect(res.props).toHaveProperty('_nextI18Next');
+		expect(res.props._nextI18Next).toHaveProperty('initialLocale');
+		expect(res.props._nextI18Next.initialLocale).toBe("es");
 	});
 });

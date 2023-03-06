@@ -1,3 +1,4 @@
+import Form from "@/modules/auth/components/Form";
 import { GetStaticProps } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -23,7 +24,7 @@ const Login = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main>
-		    	<h1>Desde login</h1>
+				<Form/>
 			</main>
 		</>
 	);
