@@ -1,0 +1,32 @@
+{
+    "welcome": "Bienvenido",
+    "Title": "Inicia sesión",
+    "divider": "o",
+    "form": {
+        "email-input": {
+            "label": "Correo electrónico",
+            "placeholder": "john.doe@ejemplo.com"
+        },
+        "password-input": {
+            "label": "Contraseña",
+            "placeholder": ""
+        },
+        "login-button": {
+            "text": "Ingresar"
+        }
+    },
+    "social-media-login": {
+        "google": "Inicia sesión con Google",
+        "twitter": "Inicia sesión con Twitter"
+    },
+    "misc-links": {
+        "no-account": {
+            "text": "¿Aún no tienes una cuenta?",
+            "link-text": "Regístrate gratis"
+        },
+        "forgot-password": {
+            "text": "¿Olvidaste tu contraseña?",
+            "link-text": "Recupérala aquí"
+        }
+    }
+}

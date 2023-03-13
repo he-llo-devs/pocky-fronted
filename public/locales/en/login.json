@@ -1,0 +1,32 @@
+{
+    "welcome": "Welcome",
+    "Title": "Log In",
+    "divider": "or",
+    "form": {
+        "email-input": {
+            "label": "Email",
+            "placeholder": "john.doe@example.com"
+        },
+        "password-input": {
+            "label": "Password",
+            "placeholder": ""
+        },
+        "login-button": {
+            "text": "Get in"
+        }
+    },
+    "social-media-login": {
+        "google": "Log in using Google",
+        "twitter": "Log in using Twitter"
+    },
+    "misc-links": {
+        "no-account": {
+            "text": "Don't you have an account yet?",
+            "link-text": "Sign up for free"
+        },
+        "forgot-password": {
+            "text": "Did you forget your password?",
+            "link-text": "Recover it here"
+        }
+    }
+}
