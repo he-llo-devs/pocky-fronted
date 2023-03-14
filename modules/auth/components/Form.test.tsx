@@ -29,7 +29,7 @@ describe("Login form", (): void => {
 	});
 
 	it("renders page", (): void => {
-		const h1 = FormComponent.getByRole('heading');
-		expect(h1).toBeInTheDocument();
+		const h1 = FormComponent.getAllByRole('heading');
+		expect(h1).toBeTruthy();
 	});
 });

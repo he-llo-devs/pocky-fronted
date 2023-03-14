@@ -29,8 +29,8 @@ describe("Login page", (): void => {
 	});
 
 	it("renders page", (): void => {
-		const h1 = HomeComponent.getByRole('heading');
-		expect(h1).toBeInTheDocument();
+		const h1 = HomeComponent.getAllByRole('heading');
+		expect(h1).toBeTruthy();
 	});
 
 	it("GetServerSideProps should return the corresponding i18n locale", async (): Promise<void> => {

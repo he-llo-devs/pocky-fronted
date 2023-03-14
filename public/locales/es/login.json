@@ -1,6 +1,6 @@
 {
     "welcome": "Bienvenido",
-    "Title": "Inicia sesión",
+    "title": "Inicia sesión",
     "divider": "o",
     "form": {
         "email-input": {

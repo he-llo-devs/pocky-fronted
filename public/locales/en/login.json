@@ -1,6 +1,6 @@
 {
     "welcome": "Welcome",
-    "Title": "Log In",
+    "title": "Log In",
     "divider": "or",
     "form": {
         "email-input": {
