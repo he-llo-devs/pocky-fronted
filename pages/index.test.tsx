@@ -3,7 +3,7 @@ import { cleanup, render, renderHook } from '@testing-library/react';
 import { I18nextProvider, useTranslation} from 'react-i18next';
 import { act } from 'react-dom/test-utils';
 
-//Types
+// Types
 import { RenderResult } from '@testing-library/react';
 import { I18n } from 'next-i18next';
 
